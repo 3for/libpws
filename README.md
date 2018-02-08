@@ -25,7 +25,7 @@ Next, to build the software:
     ./configure
     make -j4        # for example
 
-## license ##
+# license #
 
 Copyright 2017 Riad S. Wahby <rsw@cs.stanford.edu> and the Hyrax authors.
 
