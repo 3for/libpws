@@ -12,14 +12,14 @@ rewritten the build system, and done other cleanup.
 On debian-ish systems, you'll probably need the following:
 
     apt-get install build-essential g++ automake pkg-config \
-                    python-dev libssl-dev libtool libtool-bin libgmp-dev
+                    libssl-dev libtool libtool-bin libgmp-dev
 
 The above should translate straightforwardly to other package managers: you'll
-need a C++11-compatible compiler (I've tested with g++ 5 and 6), automake,
-pkg-config, libtool, and development headers for Python 2.7 and OpenSSL.
-If you can't figure out what packages you need to install, please contact me!
+need a C++11-compatible compiler (I've tested with g++ 5, 6, and 7), automake,
+pkg-config, libtool, and development headers for OpenSSL.
+(If you can't figure out what packages you need to install, please contact me!)
 
-Next, to actually build the software:
+Next, to build the software:
 
     ./autogen.sh
     ./configure

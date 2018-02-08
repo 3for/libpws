@@ -47,10 +47,6 @@ AC_CHECK_LIB(gmp, __gmpz_powm_sec, , [AC_MSG_ERROR([GnuMP >= 5 not found. You ne
 
 # Checks for library functions.
 
-# Check for Python
-AM_PATH_PYTHON(2.7)
-AM_CHECK_PYTHON_HEADERS(,[AC_MSG_ERROR(could not find Python headers)])
-
 AC_CONFIG_FILES([Makefile src/Makefile src/circuit/Makefile src/pwsrepeat/Makefile src/pws2svg/Makefile src/pylibpws/Makefile src/tests/Makefile])
 
 AC_OUTPUT

@@ -3,6 +3,7 @@
 *.a
 *.o
 *.pyc
+*.pyo
 *.lo
 *.la
 
@@ -11,6 +12,7 @@ Makefile.in
 .deps
 .libs
 
+/m4
 /aclocal.m4
 /autom4te.cache/
 /config.guess

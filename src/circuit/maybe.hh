@@ -31,18 +31,18 @@ public:
     valid = true;
   }
 
-  Maybe<T>& operator= (const T& val)
+  Maybe<T>& operator= (const T& valu)
   {
     validate();
-    this->val = val;
+    this->val = valu;
     return *this;
   }
 
 #if defined(__GXX_EXPERIMENTAL_CXX0X__) || __cplusplus >= 201103L
-  Maybe<T>& operator= (T&& val)
+  Maybe<T>& operator= (T&& valu)
   {
     validate();
-    this->val = std::move(val);
+    this->val = std::move(valu);
     return *this;
   }
 

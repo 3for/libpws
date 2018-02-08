@@ -1,8 +1,10 @@
-AM_CPPFLAGS = -I$(srcdir)/../circuit $(OpenSSL_CFLAGS) $(PYTHON_INCLUDES)
+AM_CPPFLAGS = -I$(srcdir)/../circuit $(OpenSSL_CFLAGS)
 AM_CXXFLAGS = $(GLOBAL_CXXFLAGS) $(OPT_CXXFLAGS)
+AM_CXXFLAGS += -m64 -pedantic -pedantic-errors -std=c++14 -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2
+#-Weffc++ --- not using because circuit's initializers aren't written in the correct style
 
-pyexec_LTLIBRARIES = pylibpws.la
+lib_LTLIBRARIES = pylibpws.la
 
-pylibpws_la_SOURCES = pylibpwsmodule.cc
-pylibpws_la_LIBADD = ../circuit/libcircuit.la -lgmp $(OpenSSL_LIBS)
-pylibpws_la_LDFLAGS = -module -avoid-version -export-symbols-regex initpylibpws -shared
+pylibpws_la_SOURCES = pylibpws.cc
+pylibpws_la_LIBADD = ../circuit/libcircuit_impl.la -lgmp $(OpenSSL_LIBS)
+pylibpws_la_LDFLAGS = -module -shared -export-symbols-regex pypws_
